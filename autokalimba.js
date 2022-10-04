@@ -205,6 +205,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     fullscreenButton.style.display = "none";
   }
 
+  $("#hide-bonus").onchange = (e) => {
+    console.log(e.target);
+    $$(".bonus").forEach((a) => {a.style.cssText = e.target.checked ? "display: none;" : ""});
+  };
   for (const name of Object.keys(instruments)) {
     const option = document.createElement("option");
     option.value = name;
